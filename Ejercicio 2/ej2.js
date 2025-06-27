@@ -7,15 +7,18 @@ filtro.addEventListener("click",(e)=>{
 
     const palabra = document.getElementById("text").value.trim().toLowerCase()
     const error = document.getElementById("error")
+    
 
     if(palabra === ""){
         error.innerText = "Error, ingrese una palabra"
     }else{
         error.innerText = ""
     }
-
+   
     const filtrado = lista.filter((busqueda)=>{
-        return busqueda === palabra
+        if(busqueda.includes(palabra)){
+            return busqueda
+        }
 
     })
     
